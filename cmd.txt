@@ -1,0 +1,105 @@
+1.
+mkdir project1
+mkdir project2
+2.
+cd project1
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:tubhutani13/test_project.git
+git push origin main
+3.
+git checkout -b staging
+4.
+echo "This is first commit" >> test1.txt
+git add test1.txt
+git commit -m "This is first commit"
+[main 588ef0f] This is first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test1.txt
+5.
+git push -u origin staging
+6.
+cd..\project2
+7.
+cd..
+git clone git@github.com:tubhutani13/test_project.gits project2
+8.
+cd project2
+9.
+copy con test1.txt "This is second commit"
+10.
+git push origin stging
+11.
+cd../project1
+12.
+git checkout staging
+13.
+git add test1.txt
+git commit -m "This is third commit"
+git push origin staging
+ ! [rejected]        staging -> staging (fetch first)
+error: failed to push some refs to 'github.com:tubhutani13/test_project.git'
+because the branch at origin is ahead of the branch at repo so we have to fetch the branch from origi first
+git stash
+git pull origin staging
+git add test1.txt 
+git commit -m "this is the third commit"
+git push origin staging  
+15.
+git checkout main
+16
+git merge staging
+17.
+git checkout -b testing
+18.
+git add test1.txt
+git commit -m "commit 1"
+git add test1.txt
+git commit -m "commit 2"
+git add test1.txt
+git commit -m "commit 3"
+git add test1.txt
+git commit -m "commit 4"
+git add test1.txt
+git commit -m "commit 5"
+git add test1.txt
+git commit -m "commit 6"
+git add test1.txt
+git commit -m "commit 7"
+git push origin testing
+21
+git checkout main
+22.
+git add test1.txt
+git commit -m "number commit 1"
+git add test1.txt
+git commit -m "number commit 2"
+git add test1.txt
+git commit -m "number commit 3"
+git add test1.txt
+git commit -m "number commit 4"
+git add test1.txt
+git commit -m "number commit 5"
+git add test1.txt
+git commit -m "number commit 6"
+git add test1.txt
+git commit -m "number commit 7"
+24.
+git push origin main
+25.
+git checkout testing
+git rebase master
+#after resolving conflicts
+git add test1.txt
+git rebase --continue
+26.
+cd../project2
+27.
+git checkout -b testing
+Switched to a new branch 'testing'
+git branch -u origin/testing
+branch 'testing' set up to track 'origin/testing'.
+git checkout main
+git merge testing
